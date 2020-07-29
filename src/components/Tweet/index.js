@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-
 import Header from "./Header";
 import ActionBar from "./ActionBar";
 

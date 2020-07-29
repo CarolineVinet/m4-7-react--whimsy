@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
+import TweetProvider from "../TweetContext";
 import Tweet from "./Tweet";
-
 import avatar from "../assets/carmen-sandiego.png";
 
 const App = () => {
