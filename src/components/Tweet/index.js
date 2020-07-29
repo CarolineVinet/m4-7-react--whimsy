@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import ActionBar from "./ActionBar";
 import { TweetContext } from "../../TweetContext";
+import Stats from "../Stat";
 
 const Tweet = () => {
   const {
@@ -23,6 +24,8 @@ const Tweet = () => {
       />
       <TweetContents>{tweetContents}</TweetContents>
       <Timestamp>{date}</Timestamp>
+      <Divider />
+      <Stats></Stats>
       <Divider />
       <ActionBar
         isRetweetedByCurrentUser={isRetweetedByCurrentUser}
@@ -56,12 +59,6 @@ const Timestamp = styled.div`
 const Divider = styled.div`
   height: 1px;
   background: rgb(230, 236, 240);
-`;
-
-const Stats = styled.div`
-  display: flex;
-  align-items: center;
-  height: 48px;
 `;
 
 export default Tweet;
