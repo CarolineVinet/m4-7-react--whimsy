@@ -7,14 +7,9 @@ import avatar from "../assets/carmen-sandiego.png";
 const App = () => {
   return (
     <Wrapper>
-      <Tweet
-        tweetContents="Where in the world am I?"
-        displayName="Carmen Sandiego ✨"
-        username="carmen-sandiego"
-        avatarSrc={avatar}
-        isRetweetedByCurrentUser={false}
-        isLikedByCurrentUser={false}
-      />
+      <TweetProvider>
+        <Tweet />
+      </TweetProvider>
     </Wrapper>
   );
 };
