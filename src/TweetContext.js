@@ -11,7 +11,26 @@ const TweetProvider = ({ children }) => {
   const [isLiked, setIsLiked] = React.useState(false);
   const date = new Date();
   const formattedDate = moment(date).format("h:mm a - MMMM Do YYYY");
-  console.log(formattedDate);
+
+  const handleToggleLike = () => {
+    if (isLiked === false) {
+      setIsLiked(true);
+      setNumOfLikes(numOfLikes + 1);
+    } else if (isLiked === true) {
+      setIsLiked(false);
+      setNumOfLikes(numOfLikes - 1);
+    }
+  };
+
+  const handleToggleRetweet = () => {
+    if (isRetweeted === false) {
+      setIsRetweeted(true);
+      setNumOfRetweets(numOfRetweets + 1);
+    } else if (isRetweeted === true) {
+      setIsRetweeted(false);
+      setNumOfRetweets(numOfRetweets - 1);
+    }
+  };
 
   return (
     <>
@@ -24,8 +43,10 @@ const TweetProvider = ({ children }) => {
           isRetweetedByCurrentUser: isRetweeted,
           numberOfLikes: numOfLikes,
           numberOfRetweets: numOfRetweets,
-          isLikedByCurrentUser: isLiked,
+          isLiked: isLiked,
           date: formattedDate,
+          handleToggleLike,
+          handleToggleRetweet,
         }}
       >
         {children}
